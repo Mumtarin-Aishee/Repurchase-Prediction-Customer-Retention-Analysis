@@ -85,3 +85,8 @@ CALCULATE(SUM(Orders[Revenue]), Orders[Year] = "2026")
 ## Assumptions & Limitations
 
 The median-interval estimate assumes fairly regular buying behavior; it will be less reliable for a customer who returns after an unusually long gap (e.g. the 196-day case). The model currently relies on Power BI's auto-generated date tables rather than a single shared, explicitly marked Date dimension — a cleanup item for the next iteration.
+
+## Privacy note
+
+Client name, customer names, and exact revenue figures are anonymized or replaced with illustrative sample data throughout this project's public files. The underlying `.pbix` and raw Excel exports contain real customer data and are intentionally **not** included in this repository.
+
