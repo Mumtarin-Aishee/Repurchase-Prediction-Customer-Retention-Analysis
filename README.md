@@ -9,7 +9,7 @@ The client had no systematic way to know when a repeat customer was due to reord
 
 ## Data & Sources
 
-Raw order-level CSV export from Woocommerce (Jan '25–Aug '26) with Date, Order #, Revenue (currency-formatted text), Customer, a multi-product field (up to 14 products per order, delimited), Coupons, Net Sales, Attribution, and Invoice Number.
+Extracted raw order-level CSV export from WooCommerce database hosted on WordPress. The database contains Jan '25–Aug '26 order data, date, order #, invoice no., revenue, net sales, customer name, a multi-product field (up to 14 products per order, delimited), coupons, source, and attribution.
 
 ## Data Transformation (Power Query)
 
