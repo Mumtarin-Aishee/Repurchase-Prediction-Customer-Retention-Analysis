@@ -13,6 +13,7 @@ Documentation for the raw order-level export used as the input to the [repurchas
 | **Time coverage** | ~20 months, January 2025 through August 2026 |
 | **Format** | CSV, UTF-8, comma-delimited with quoted fields |
 | **Columns** | 12 |
+| **Rows** | 5578 |
 
 ## Column reference
 
