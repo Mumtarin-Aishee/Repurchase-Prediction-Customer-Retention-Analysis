@@ -1,4 +1,4 @@
-# Repurchase Prediction & Customer Retention Analysis - PowerBI
+# Customer Repurchase Interval Analysis with a Retention Reminder Framework - PowerBI
 `Power BI` `DAX` `Power Query (M)` `Excel`
 
 
