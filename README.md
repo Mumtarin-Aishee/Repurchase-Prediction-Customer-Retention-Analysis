@@ -13,22 +13,17 @@ Extracted raw order-level CSV export from WooCommerce database hosted on WordPre
 
 ## Data Transformation (Power Query)
 
-Built a Power Query pipeline to turn a messy multi-product order export into an analysis-ready table:
+Before any analysis runs, the raw order export goes through a Power Query pipeline built specifically to handle what that export gets wrong:
 
-- Promoted headers and set column types
-- Parsed `Date` into Month/Year
-- Extracted numeric Revenue from a currency-prefixed text field
-- Split the delimited Product(s) column into up to 14 slots, then **unpivoted** them into one row per product line
-- Parsed each product entry into ordered quantity + product name
-- Filtered out non-order junk rows and reordered the final columns
+- Revenue stored as currency-formatted text — stripped and converted to a real number
+- Revenue field disagreeing with its own "net sales" figure — one is picked as canonical, documented, and used consistently
+- Internal/staff accounts mixed into the customer list — filtered out via a maintained exclude-list
+- Blank product fields on orders that clearly have items — flagged and preserved instead of silently dropped
+- Inconsistently formatted marketing-channel values — standardized into a clean set of categories
 
-```
-#"Split Column by Delimiter1" = Table.SplitColumn(#"Changed Type1", "N. Revenue (formatted)",
-    Splitter.SplitTextByDelimiter("৳", QuoteStyle.Csv), {"N. Revenue (formatted).1", "N. Revenue (formatted).2"}),
-#"Unpivoted Columns" = Table.UnpivotOtherColumns(#"Renamed Columns1",
-    {"Date","Order #","Revenue","Status","Customer","Customer type","Items sold","Coupon(s)","Net Sales","Attribution","Invoice Number","Month","Year"},
-    "Attribute", "Value"),
-```
+That's five out of six data-quality issues found in the export, resolved directly in the pipeline. The sixth — the customer base skewing toward one-time buyers isn't a data error, so it's handled as a scoping note at the reporting layer instead.
+
+Full breakdown with the actual M code: phase-1-bi-repurchase-model/data-transformation.md
 
 ## Data Modeling (DAX)
 
