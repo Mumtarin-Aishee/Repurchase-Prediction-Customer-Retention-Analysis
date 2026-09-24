@@ -79,7 +79,7 @@ CALCULATE(SUM(Orders[Revenue]), Orders[Year] = "2026")
 
 ![Repurchase Interval Dashboard](./repurchase-interval-dashboard.png)
 
-- 16 repeat customers identified with documented repurchase patterns (intervals from 9 to 196 days), representing ৳6,456,289 in combined 2026 revenue.
+- 16 repeat customers generated 68% of 2026 revenue, with observed repurchase intervals ranging from 9 days to 6 months.
 - Built a proactive reminder schedule (Sep–Dec 2026): `Reminder Date = Last Purchase + Repurchase Interval − 3-day processing buffer`.
 - Identified the top 10 new high-value accounts by 2026 revenue with no repeat purchase yet, flagged for retention outreach.
 
