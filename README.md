@@ -5,11 +5,11 @@
 
 ## Problem
 
-The client had no systematic way to know when a repeat customer was due to reorder — tracking depended on manual review, so lapsing high-value accounts could go unnoticed.
+The client had no systematic way to know when a repeat customer was due to reorder. Order tracking depended on manual review of large order dataset, so lapsing high-value accounts could go unnoticed.
 
 ## Data & Sources
 
-Raw order-level CSV export (Jan '25–Aug '26) with Date, Order #, Revenue (currency-formatted text), Customer, a multi-product field (up to 14 products per order, delimited), Coupons, Net Sales, Attribution, and Invoice Number.
+Raw order-level CSV export from Woocommerce (Jan '25–Aug '26) with Date, Order #, Revenue (currency-formatted text), Customer, a multi-product field (up to 14 products per order, delimited), Coupons, Net Sales, Attribution, and Invoice Number.
 
 ## Data Transformation (Power Query)
 
