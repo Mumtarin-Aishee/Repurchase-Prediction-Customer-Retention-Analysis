@@ -1,5 +1,4 @@
-# Repurchase Prediction & Customer Retention Analysis — DTC Home Fragrance Brand
-
+# Repurchase Prediction & Customer Retention Analysis - PowerBI
 `Power BI` `DAX` `Power Query (M)` `Excel`
 
 
