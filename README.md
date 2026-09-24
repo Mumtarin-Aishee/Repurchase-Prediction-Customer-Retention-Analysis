@@ -84,7 +84,9 @@ CALCULATE(SUM(Orders[Revenue]), Orders[Year] = "2026")
 
 ## Assumptions & Limitations
 
-The median-interval estimate assumes fairly regular buying behavior; it will be less reliable for a customer who returns after an unusually long gap (e.g. the 196-day case). The model currently relies on Power BI's auto-generated date tables rather than a single shared, explicitly marked Date dimension — a cleanup item for the next iteration.
+- The median-interval estimate assumes fairly regular buying behavior; it will be less reliable for a customer who returns after an unusually long gap (e.g. the 196-day case). The model currently relies on Power BI's auto-generated date tables rather than a single shared, explicitly marked Date dimension — a cleanup item for the next iteration.
+
+- Data Quality Issue 7 — the customer base skewing toward one-time buyers — isn't a transformation problem, so there's no step for it here. It's handled at the reporting layer: the repurchase-interval model scopes explicitly to the repeat-purchase segment rather than treating the full customer list as representative.)
 
 ## Privacy note
 
