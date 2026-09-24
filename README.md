@@ -11,6 +11,17 @@ The client had no systematic way to know when a repeat customer was due to reord
 
 Extracted raw order-level CSV export from WooCommerce database hosted on WordPress. The database contains Jan '25–Aug '26 order data, date, order #, invoice no., revenue, net sales, customer name, a multi-product field (up to 14 products per order, delimited), coupons, source, and attribution.
 
+## Data Quality
+
+Profiling the raw order export surfaced six data-quality issues, documented in full in data-quality-issues.md. Four are corrected in the transformation pipeline:
+
+- Revenue stored as currency-formatted text — stripped and converted to a real number
+- Revenue field disagreeing with the net-sales field — one is picked as canonical and used consistently
+- Internal/operational accounts mixed into the customer list — filtered out via a maintained exclude-list
+- Blank product fields on orders that clearly have items — flagged and kept, rather than silently dropped
+- Inconsistently formatted Attribution values — not needed for this analysis, so no cleanup step was built for it
+- Customer base skewed toward one-time buyers — not a data defect, just a framing note: the repurchase-interval results describe the repeat-purchase segment, not the average customer
+
 ## Data Transformation (Power Query)
 
 Before any analysis runs, the raw order export goes through a Power Query pipeline built specifically to handle what that export gets wrong:
