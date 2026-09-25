@@ -2,7 +2,7 @@
 `Power BI` `DAX` `Power Query (M)` `Excel`
 
 
-## Problem
+## Business Problem
 
 The client had no systematic way to know when a repeat customer was due to reorder. Order tracking depended on manual review of large order dataset, so lapsing high-value accounts could go unnoticed.
 
@@ -83,11 +83,9 @@ CALCULATE(SUM(Orders[Revenue]), Orders[Year] = "2026")
 - Built a proactive reminder schedule (Sep–Dec 2026): `Reminder Date = Last Purchase + Repurchase Interval − 3-day processing buffer`.
 - Identified the top 10 new high-value accounts by 2026 revenue with no repeat purchase yet, flagged for retention outreach.
 
-## Recommendations
+## Solution
 
-- Automate the reminder schedule into a recurring trigger rather than a one-off manual run.
-- Prioritize the two highest-frequency buyers (9–12 day intervals) first — they generate the most reminder touchpoints per quarter.
-- Track actual reorder conversion from reminders sent, to replace the interval estimate with a real response-rate model over time.
+- Built a weekly retention reminder workflow using Claude that identifies customers whose estimated reorder dates fall within the upcoming week and automatically sends the ecommerce client a reminder email every Monday at 9 AM.
 
 ## Assumptions & Limitations
 
